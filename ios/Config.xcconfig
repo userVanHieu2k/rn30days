@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  rn30days
+//
+//  Created by hieunv on 5/9/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include? "tmp.xcconfig"

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "764227837736",
+    "project_id": "rn30days",
+    "storage_bucket": "rn30days.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764227837736:android:f632c17afc88c678dd7a1d",
+        "android_client_info": {
+          "package_name": "com.rn30days"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtp2E45bd4si3MwR0JKHsQvC6pWBjL7KM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
