@@ -24,25 +24,25 @@ const MainNavigator = () => {
         <MainStack.Screen name={Routes.HOME} component={TempScreen} options={{title: '30 DAY OF REACT NATIVE'}}/>
         <MainStack.Screen name={Routes.DAYONE} component={DayOne} options={{title: 'A stop watch', headerLeft: () => (
             <TouchableOpacity onPress={navigation.goBack} >
-              {/* <BackButton onPress={navigation.goBack} style={{width:  scale(24), height: scale(24)}}/> */}
+             
               <Text>Back</Text>
             </TouchableOpacity>
           ),}}/>
         <MainStack.Screen name={Routes.DAYTWO} component={Weather} options={{title: 'WEATHER', headerLeft: () => (
             <TouchableOpacity onPress={navigation.goBack} >
-              {/* <BackButton onPress={navigation.goBack} style={{width:  scale(24), height: scale(24)}}/> */}
+             
               <Text>Back</Text>
             </TouchableOpacity>
           ),}}/>
         <MainStack.Screen name={Routes.DAYTHREE} component={PanResponsive} options={{title: 'PanResponsive', headerLeft: () => (
             <TouchableOpacity onPress={navigation.goBack} >
-              {/* <BackButton onPress={navigation.goBack} style={{width:  scale(24), height: scale(24)}}/> */}
+             
               <Text>Back</Text>
             </TouchableOpacity>
           ),}}/>
         <MainStack.Screen name={Routes.PUSHNOTI} component={PushNoti} options={{title: 'PUSH NOTI', headerLeft: () => (
             <TouchableOpacity onPress={navigation.goBack} >
-              {/* <BackButton onPress={navigation.goBack} style={{width:  scale(24), height: scale(24)}}/> */}
+             
               <Text>Back</Text>
             </TouchableOpacity>
           ),}}/>
