@@ -6,6 +6,7 @@ import rootNavigation from "./rootNavigation";
 import { useDispatch } from "react-redux";
 import { fetchUserRequest } from "../app-reduxs/user/slice";
 import { saveCommentStart } from "../app-reduxs/catagory/slice";
+import linking from "../../linking";
 const AppContainer = () => {
     const dispatch = useDispatch();
 
@@ -17,7 +18,7 @@ const AppContainer = () => {
 
   return (
     <>
-      <NavigationContainer ref={rootNavigation.navigationRef}>
+      <NavigationContainer ref={rootNavigation.navigationRef} linking={linking}>
         <MainNavigator />
       </NavigationContainer>
     </>
