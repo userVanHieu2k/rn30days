@@ -1,50 +1,855 @@
-import React from "react";
+import React, { useState } from 'react';
 import {
   ActivityIndicator,
   Button,
+  FlatList,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-} from "react-native";
-import styles from "./styles";
-import { scale } from "../../utils/scale";
+} from 'react-native';
+import styles from './styles';
+import {scale} from '../../utils/scale';
+import {useNavigation} from '@react-navigation/native';
+import Routes from '../../navigators/Routes';
 
 const TempScreen = (props: any) => {
+  const navigation = useNavigation();
+  const [number, setNumber] = useState(1)
 
-  const onPress = () => {
-    console.log('props', props);
-    
-    props.navigation.navigate('DAYONE')
-  };
-  const onPressW = () => {
-    props.navigation.navigate('DAYTWO')
-  };
-  const DayThree = () => {
-    props.navigation.navigate('DAYTHREE')
-  };
-  const PushNoti = () => {
-    props.navigation.navigate('PUSHNOTI')
-  };
+  const actions = [
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+    {name: 'Day One', action: () => navigation.navigate(Routes.DAYONE)},
+    {name: 'Day Two', action: () => navigation.navigate(Routes.DAYTWO)},
+    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {
+      name: 'Push Notification',
+      action: () => navigation.navigate(Routes.PUSHNOTI),
+    },
+  ];
+  const ITEM_HEIGHT = scale(40);
+  const RenderItem = React.memo(({item}: any) => (
+    <TouchableOpacity style={styles.button} onPress={item.action}>
+      <Text style={styles.buttonText}>{item.name}</Text>
+    </TouchableOpacity>
+  ));
+
+  const loadMoreData = () => {
+    setNumber(number + 1);
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.loginForm}>
-        <TouchableOpacity style={{height: scale(50)}} onPress={onPress}>
-          <Text>Day 1(stop watch)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={{height: scale(50)}} onPress={onPressW}>
-          <Text>Day 2(weather)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={{height: scale(50)}} onPress={DayThree}>
-          <Text>Day 3(PanResponder)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={{height: scale(50)}} onPress={PushNoti}>
-          <Text>Day 3(PushNoti)</Text>
-        </TouchableOpacity>
+        <FlatList
+          data={actions.slice(0, number * 10)}
+          keyExtractor={(_item: any, index) => index.toString()}
+          renderItem={({item}) => <RenderItem item={item} />}
+          getItemLayout={(data, index) => ({
+            length: ITEM_HEIGHT, // Chiều cao của mỗi item
+            offset: ITEM_HEIGHT * index,
+            index,
+          })}
+          initialNumToRender={10} // Số lượng item render ban đầu
+          maxToRenderPerBatch={10} // Số lượng item render mỗi batch
+          windowSize={5} // Kích thước window render
+          showsVerticalScrollIndicator={false}
+          removeClippedSubviews={true}
+          onEndReached={loadMoreData}
+          onEndReachedThreshold={0.5}
+        />
       </View>
     </View>
   );
 };
-
 export default TempScreen;

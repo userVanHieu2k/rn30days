@@ -1,4 +1,5 @@
 import {StyleSheet} from "react-native";
+import { scale } from "../../utils/scale";
 
 export default StyleSheet.create({
   container: {
@@ -7,9 +8,8 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   loginForm: {
-    justifyContent: "center",
-    alignItems: "center",
-    width: "80%",
+    width: '100%',
+    paddingHorizontal: scale(20)
   },
   input: {
     height: 40,
@@ -24,13 +24,17 @@ export default StyleSheet.create({
     textAlign: "center",
     fontWeight: "500"
   },
-  buttonContainer: {
+  button: {
     width: "100%",
-    backgroundColor: "red",
+    backgroundColor: "#D1E",
     justifyContent: "center",
-    height: 40,
+    height: scale(40),
     marginTop: 15,
-    borderRadius: 20,
+    borderRadius: 8,
     paddingHorizontal: 10,
+  },
+  buttonText: {
+    fontSize: 16,
+    color: 'white',
   },
 });

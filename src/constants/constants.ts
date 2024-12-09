@@ -16,6 +16,18 @@ export default {
 	REASON_DELETE: 'REASON_DELETE',
 	CHANGE_PHONE_NUMBER: 'CHANGE_PHONE_NUMBER',
 }
+
+export const FontFamily = {
+	Manrope: 'Manrope',
+	Manrope300: 'Manrope-Light',
+	Manrope400: 'Manrope-Regular',
+	Manrope500: 'Manrope-Medium',
+	Manrope600: 'Manrope-SemiBold',
+	Manrope700: 'Manrope-Bold',
+	Manrope800: 'Manrope-ExtraBold',
+	Manrope800Italic: 'Manrope-ExtraBoldItalic',
+}
+
 export const urlDemo =
 	'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0kc_TLq5-Re1X8tZ5m9ZRgMdAjKWObY8DeA&usqp=CAU'
 export const REGEX_EMAIL = /^[^\s@.][^\s@]*@[^\s@]+\.[^\s@]+$/

@@ -17,7 +17,7 @@ import UserApi from '../../networking/apis/User';
 function* fetchUser(index: number) {
   try {
     const response: [data: User] = yield UserApi.getUser();
-    console.log('=========response?.data?.results=====', response);
+    // console.log('=========response?.data?.results=====', response);
 
     if (response) {
       yield call(
@@ -35,7 +35,7 @@ function* fetchUser(index: number) {
 function* fetchUser1(index: number) {
   try {
     const response: [data: User] = yield UserApi.getUser();
-    console.log('=========response?.data?.results=====', response);
+    // console.log('=========response?.data?.results=====', response);
 
     if (response) {
       yield call(
