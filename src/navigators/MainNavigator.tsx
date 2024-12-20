@@ -8,6 +8,8 @@ import { scale } from "../utils/scale";
 import { Weather } from "../screens/DayTwo";
 import { PanResponsive, PushNoti } from "../screens/DayThree";
 import MyTabs from "./BottomTapNavigation";
+import FirstAnimated from "../screens/Animated/FirstAnimated";
+import SecondAnimated from "../screens/Animated/SecondAnimated";
 const MainStack = createNativeStackNavigator();
 
 const MainNavigator = () => {
@@ -21,11 +23,13 @@ const MainNavigator = () => {
           animation: "none",
           // headerShown: false
         }}>
-        <MainStack.Screen name={Routes.MYTABS} component={MyTabs}/>
+        <MainStack.Screen name={Routes.MYTABS} component={TempScreen}/>
         <MainStack.Screen name={Routes.DAYONE} component={DayOne} />
         <MainStack.Screen name={Routes.DAYTWO} component={Weather} />
         <MainStack.Screen name={Routes.DAYTHREE} component={PanResponsive}/>
         <MainStack.Screen name={Routes.PUSHNOTI} component={PushNoti}/>
+        <MainStack.Screen name={Routes.FIRSTANIMATION} component={FirstAnimated}/>
+        <MainStack.Screen name={Routes.SECONDANIMATION} component={SecondAnimated}/>
       </MainStack.Navigator>
     </>
   );

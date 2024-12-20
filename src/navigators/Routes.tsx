@@ -6,4 +6,6 @@ export default {
   DAYTWO: "DAYTWO" as never,
   DAYTHREE: "DAYTHREE" as never,
   PUSHNOTI: "PUSHNOTI" as never,
+  FIRSTANIMATION: "FIRSTANIMATION" as never,
+  SECONDANIMATION: "SECONDANIMATION" as never,
 };
