@@ -27,7 +27,7 @@ const TempScreen = (props: any) => {
     },
     {name: 'First Animation', action: () => navigation.navigate(Routes.FIRSTANIMATION)},
     {name: 'Second Animation', action: () => navigation.navigate(Routes.SECONDANIMATION)},
-    {name: 'Day Three', action: () => navigation.navigate(Routes.DAYTHREE)},
+    {name: 'Timing Animation', action: () => navigation.navigate(Routes.TIMINGANIMATION)},
     {
       name: 'Push Notification',
       action: () => navigation.navigate(Routes.PUSHNOTI),

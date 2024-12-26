@@ -10,6 +10,7 @@ import { PanResponsive, PushNoti } from "../screens/DayThree";
 import MyTabs from "./BottomTapNavigation";
 import FirstAnimated from "../screens/Animated/FirstAnimated";
 import SecondAnimated from "../screens/Animated/SecondAnimated";
+import TimingAnimated from "../screens/Animated/TimimgAnimated";
 const MainStack = createNativeStackNavigator();
 
 const MainNavigator = () => {
@@ -30,6 +31,7 @@ const MainNavigator = () => {
         <MainStack.Screen name={Routes.PUSHNOTI} component={PushNoti}/>
         <MainStack.Screen name={Routes.FIRSTANIMATION} component={FirstAnimated}/>
         <MainStack.Screen name={Routes.SECONDANIMATION} component={SecondAnimated}/>
+        <MainStack.Screen name={Routes.TIMINGANIMATION} component={TimingAnimated}/>
       </MainStack.Navigator>
     </>
   );
