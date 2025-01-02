@@ -9,6 +9,7 @@ import AppContainer from './src/navigators/AppContainer';
 import messaging from '@react-native-firebase/messaging';
 import {Provider} from 'react-redux';
 import store from './src/app-reduxs/store';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,9 +48,12 @@ function App() {
   }, []);
 
   return (
+    <GestureHandlerRootView>
       <Provider store={store}>
         <AppContainer />
       </Provider>
+    </GestureHandlerRootView>
+      
   );
 }
 

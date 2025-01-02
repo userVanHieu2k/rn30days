@@ -11,8 +11,9 @@ import {it} from '@jest/globals';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import HeaderHome from '../src/components/header/HeaderHome';
+import TeacherImage from '../src/components/Image/TeacherImage';
+import { TempScreen } from '../src/screens';
 
 it('renders correctly', () => {
-  renderer.create(<App />);
+  renderer.create(<TempScreen />);
 });

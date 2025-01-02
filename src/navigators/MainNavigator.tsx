@@ -11,6 +11,7 @@ import MyTabs from "./BottomTapNavigation";
 import FirstAnimated from "../screens/Animated/FirstAnimated";
 import SecondAnimated from "../screens/Animated/SecondAnimated";
 import TimingAnimated from "../screens/Animated/TimimgAnimated";
+import DrawAndDrops from "../screens/Animated/DrawAndDrops";
 const MainStack = createNativeStackNavigator();
 
 const MainNavigator = () => {
@@ -32,6 +33,7 @@ const MainNavigator = () => {
         <MainStack.Screen name={Routes.FIRSTANIMATION} component={FirstAnimated}/>
         <MainStack.Screen name={Routes.SECONDANIMATION} component={SecondAnimated}/>
         <MainStack.Screen name={Routes.TIMINGANIMATION} component={TimingAnimated}/>
+        <MainStack.Screen name={Routes.DRAWANDDROPS} component={DrawAndDrops}/>
       </MainStack.Navigator>
     </>
   );
