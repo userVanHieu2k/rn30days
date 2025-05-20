@@ -3,9 +3,10 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Routes from "./Routes";
 import LoginScreen from "../screens/login";
+import { FirstAnimated } from "../screens";
 const AuthStack = createNativeStackNavigator();
 
-const AuthNavigator = () => {
+const ProfileNavigator = () => {
   return (
     <AuthStack.Navigator
       screenOptions={{
@@ -13,12 +14,18 @@ const AuthNavigator = () => {
         animation: "none",
       }}>
       <AuthStack.Screen
+        name={Routes.FIRSTANIMATION}
+        component={FirstAnimated}
+        options={{gestureEnabled: false}}
+      />
+      <AuthStack.Screen
         name={Routes.LOGIN}
         component={LoginScreen}
         options={{gestureEnabled: false}}
+        
       />
     </AuthStack.Navigator>
   );
 };
 
-export default AuthNavigator;
+export default ProfileNavigator;

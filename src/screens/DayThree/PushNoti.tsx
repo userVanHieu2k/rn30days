@@ -7,7 +7,8 @@ import messaging from '@react-native-firebase/messaging';
 import UserApi from '../../networking/apis/User';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app-reduxs/store';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '../../utils/syncStorage';
+import Config from 'react-native-config';
 
 const PushNoti = () => {
   const {getToken} = usePushNotification()
@@ -18,10 +19,10 @@ const PushNoti = () => {
   const getUserData = async () => {
     try {
       // Sử dụng await để đợi Promise hoàn thành
-      const jsonValue = await AsyncStorage.getItem('comment0');
+      const jsonValue = await AsyncStorage.get('comment0');
       if (jsonValue !== null) {
         // Chuyển đổi chuỗi JSON thành object
-        const userObject = JSON.parse(jsonValue);
+        const userObject = jsonValue;
         console.log('User Data Object:', userObject);
         return userObject; // Trả về object người dùng
       } else {
@@ -42,6 +43,8 @@ const PushNoti = () => {
 
   useEffect(() => {
     getToken()
+    console.log('reeeee', getToken());
+    
     notifee.setBadgeCount(count);
     
   }, [count])
@@ -99,7 +102,7 @@ const PushNoti = () => {
   return (
     <View style={styles.containerPush}>
       <TouchableOpacity onPress={onDisplayNotification} style={styles.buttonBlue}>
-        <Text style={styles.text}>send local notification</Text>
+        <Text style={styles.text}>{Config.NAME}</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setCount(5)} style={styles.buttonRed}>
         <Text style={styles.text}>set appicon bet to 5</Text>

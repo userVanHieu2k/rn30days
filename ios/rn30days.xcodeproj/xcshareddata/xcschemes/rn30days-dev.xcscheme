@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1620"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
       <PreActions>
          <ExecutionAction
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "echo &quot;.env&quot; &gt; /tmp/envfile&#10;&#10;">
+               scriptText = "echo &quot;.env.dev&quot; &gt; /tmp/envfile&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "rn30days.app"
-                     BlueprintName = "rn30days"
+                     BlueprintIdentifier = "AFFBD9682DC909E800306AA9"
+                     BuildableName = "rn30days-dev.app"
+                     BlueprintName = "rn30days-dev"
                      ReferencedContainer = "container:rn30days.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -32,9 +33,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "rn30days.app"
-               BlueprintName = "rn30days"
+               BlueprintIdentifier = "AFFBD9682DC909E800306AA9"
+               BuildableName = "rn30days-dev.app"
+               BlueprintName = "rn30days-dev"
                ReferencedContainer = "container:rn30days.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +45,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -58,32 +58,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <PreActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo &quot;.env.production&quot; &gt; /tmp/envfile&#10;">
-            </ActionContent>
-         </ExecutionAction>
-      </PreActions>
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rn30days.app"
-            BlueprintName = "rn30days"
+            BlueprintIdentifier = "AFFBD9682DC909E800306AA9"
+            BuildableName = "rn30days-dev.app"
+            BlueprintName = "rn30days-dev"
             ReferencedContainer = "container:rn30days.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "IDEPreferLogStreaming"
-            value = "true"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -95,9 +79,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rn30days.app"
-            BlueprintName = "rn30days"
+            BlueprintIdentifier = "AFFBD9682DC909E800306AA9"
+            BuildableName = "rn30days-dev.app"
+            BlueprintName = "rn30days-dev"
             ReferencedContainer = "container:rn30days.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

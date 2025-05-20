@@ -22,11 +22,16 @@ target 'rn30days' do
 
   use_react_native!(
     :path => config[:reactNativePath],
+    :hermes_enabled => false,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'rn30daysTests' do
+  target 'rn30days-dev' do
+    inherit! :complete
+    # Pods for testing
+  end
+  target 'rn30days-prod' do
     inherit! :complete
     # Pods for testing
   end

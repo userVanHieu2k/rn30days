@@ -19,7 +19,7 @@ const AppContainer = () => {
   return (
     <>
       <NavigationContainer ref={rootNavigation.navigationRef} linking={linking}>
-        <MainNavigator />
+        {true ? <MainNavigator />: <AuthNavigator/>}
       </NavigationContainer>
     </>
   );

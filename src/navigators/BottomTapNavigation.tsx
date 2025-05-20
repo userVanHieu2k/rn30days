@@ -4,7 +4,7 @@ import {
 } from '@react-navigation/bottom-tabs';
 import {useLinkBuilder, useTheme} from '@react-navigation/native';
 import {PlatformPressable} from '@react-navigation/elements';
-import {DayOne, TempScreen} from '../screens';
+import {DayOne, FirstAnimated, TempScreen} from '../screens';
 import React from 'react';
 import {View, Platform, Text, Pressable, StyleSheet, TouchableHighlight} from 'react-native';
 import Routes from './Routes';
@@ -13,6 +13,7 @@ import Colors from '../assets/colors/Colors';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { IC_TAB_CALENDAR, IC_TAB_HOME} from '../assets/iconsBottom';
 import { FontFamily } from '../constants';
+import ProfileNavigator from './ProfileNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -101,7 +102,7 @@ function MyTabs() {
     }}
       tabBar={(props: any) => <MyTabBar {...props} />}>
       <Tab.Screen name="Home" component={TempScreen} />
-      <Tab.Screen name="Profile" component={DayOne} />
+      <Tab.Screen name="Profile" component={FirstAnimated} />
     </Tab.Navigator>
   );
 }
