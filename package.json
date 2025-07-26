@@ -10,12 +10,12 @@
     "test": "jest",
     "ios-run-debug-develop": "react-native run-ios --scheme DemoENVDev --configuration DebugDev",
     "ios-run-debug-staging" : "react-native run-ios --scheme DemoENVStaging --configuration DebugDev",
-    "ios-run-debug-production" : "react-native run-ios --scheme DemoENVProd --configuration DebugDev",
-    "android-run-debug-develop": "react-native run-android --no-jetifier --variant=devDebug --appId 'com.demoenv.app.dev'",
-    "android-run-debug-staging": "react-native run-android --no-jetifier --variant=stagingDebug --appId 'com.demoenv.app.stg'",
-    "android-run-debug-product": "react-native run-android --no-jetifier --variant=productDebug --appId 'com.demoenv.app.prod'",
-
-
+    "ios-run-debug-production" : "react-native run-ios --scheme DemoENVProd --configuration DebugDev","android-run-debug-develop": "ENVFILE=.env.dev cd android && ./gradlew installDevelopmentDebug && cd ..",
+    "android-run-debug-staging": "ENVFILE=.env.staging cd android && ./gradlew installStagingDebug && cd ..",
+    "android-run-debug-product": "ENVFILE=.env.prod cd android && ./gradlew installProductDebug && cd ..",
+    "android-run-release-develop": "ENVFILE=.env.dev cd android && ./gradlew installDevelopmentRelease && cd ..",
+    "android-run-release-staging": "ENVFILE=.env.staging cd android && ./gradlew installStagingRelease && cd ..",
+    "android-run-release-product": "ENVFILE=.env.prod cd android && ./gradlew installProductRelease && cd .."
   },
   "dependencies": {
     "@notifee/react-native": "^7.8.2",
